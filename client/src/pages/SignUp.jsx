@@ -3,10 +3,11 @@ import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react';
 import { useState } from 'react';
 
 const SignUp = () => {
-  const navigate = useNavigate();
   const [formData, setFormData] = useState({});
   const [errorMessage, setErrorMessage] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
@@ -81,7 +82,7 @@ const SignUp = () => {
               <Label value="Your password" />
               <TextInput
                 type="password"
-                placeholder="Password"
+                placeholder="********"
                 id="password"
                 onChange={handleChange}
               />
