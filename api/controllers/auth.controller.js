@@ -52,8 +52,8 @@ export const signin = async (req, res, next) => {
       {
         id: validUser._id,
       },
-      process.env.JWT_SECRET,
-      { expiresIn: '1d' }
+      process.env.JWT_SECRET
+      // { expiresIn: '1d' }
     );
 
     const { password: pass, ...rest } = validUser._doc;
@@ -104,10 +104,10 @@ export const google = async (req, res, next) => {
         {
           id: newUser._id,
         },
-        process.env.JWT_SECRET,
-        {
-          expiresIn: '1d',
-        }
+        process.env.JWT_SECRET
+        // {
+        //   expiresIn: '1d',
+        // }
       );
       const { password, ...rest } = newUser._doc;
       res
