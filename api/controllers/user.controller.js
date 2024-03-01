@@ -90,7 +90,6 @@ export const getUsers = async (req, res, next) => {
       .sort({ createdAt: sortDirection })
       .skip(startIndex)
       .limit(limit);
-    res.status(200).json(users);
 
     const usersWithoutPassword = users.map((user) => {
       const { password, ...rest } = user._doc;
